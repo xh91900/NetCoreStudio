@@ -41,3 +41,17 @@ C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\r
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\NetCoreWebBase.deps.json
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\NetCoreWebBase.runtimeconfig.json
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\NetCoreWebBase.runtimeconfig.dev.json
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\NetCoreWebBase.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\NetCoreWebBase.pdb
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\NetCoreWebBase.Views.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\NetCoreWebBase.Views.pdb
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.csproj.CoreCompileInputs.cache
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.Views.pdb
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.pdb
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.genruntimeconfig.cache

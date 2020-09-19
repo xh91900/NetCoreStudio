@@ -4,6 +4,42 @@
         <name>NetCoreBase</name>
     </assembly>
     <members>
+        <member name="M:NetCoreBase.APO.LogBeforeAttribute.Do(Castle.DynamicProxy.IInvocation,System.Action)">
+            <summary>
+            通过把参数invocation传进来，可以得到目标方法的很多信息
+            比如记录日志、参数检查
+            </summary>
+            <param name="invocation"></param>
+        </member>
+        <member name="T:NetCoreBase.APO.CustomAOPExtend">
+            <summary>
+            初始化aop
+            </summary>
+        </member>
+        <member name="T:NetCoreBase.APO.CustomInterceptor">
+            <summary>
+            拦截器的实现类
+            需要安装Castle.Core
+            </summary>
+        </member>
+        <member name="M:NetCoreBase.APO.CustomInterceptor.PerformProceed(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            调用前执行
+            </summary>
+            <param name="invocation"></param>
+        </member>
+        <member name="M:NetCoreBase.APO.CustomInterceptor.PreProceed(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            拦截的方法返回时调用的拦截器
+            </summary>
+            <param name="invocation"></param>
+        </member>
+        <member name="M:NetCoreBase.APO.CustomInterceptor.PostProceed(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            
+            </summary>
+            <param name="invocation"></param>
+        </member>
         <member name="T:NetCoreBase.Attributes.CustomActionFilterAttribute">
             <summary>
             asp.net core 里面的过滤器有（按执行顺序排序）
@@ -31,15 +67,87 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:NetCoreBase.ExtensionFunctions.IdentityServerCenterExtension">
+            <summary>
+            ids授权中心
+            </summary>
+        </member>
+        <member name="T:NetCoreBase.ExtensionFunctions.IdentityServerClientExtension">
+            <summary>
+            ids客户端其实就是去授权中心拿解密的公钥，然后用公钥解密token，如果能解密则说明是特定私钥加密的，则通过身份认证
+            </summary>
+        </member>
         <member name="T:NetCoreBase.ExtensionFunctions.SwaggerExtension">
             <summary>
             用swagger action必须标记HTTP操作方法，get,post...
+            </summary>
+        </member>
+        <member name="M:NetCoreBase.IdentityServer4.InitConfig.GetClients">
+            <summary>
+            定义验证条件的client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NetCoreBase.IOC.Container.CreateChildContainer">
+            <summary>
+            创建子容器用于实现作用域生命周期的注入
+            这里的this.ContainerDictionary是把源对象的注册关系传递给子对象
+            每次创建子容器，它里面的单例对象都是空的，全新的
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NetCoreBase.IOC.Container.#ctor(System.Collections.Generic.Dictionary{System.String,NetCoreBase.IOC.ContainerRegistModel},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            调用构造函数的时候会创建一个新的对象，这里的this.ContainerDictionary是新对象的ContainerDictionary
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:NetCoreBase.IOC.Container.Register``2(System.String,NetCoreBase.IOC.LifeTime)">
+            <summary>
+            
+            </summary>
+            <typeparam name="F"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="instanceName">用于实现单接口多实现的注册</param>
+            <param name="lifeTime">生命周期</param>
+        </member>
+        <member name="M:NetCoreBase.IOC.Container.ResolveObject(System.Type,System.String)">
+            <summary>
+            递归实现获取注入的实例
+            </summary>
+            <param name="TargetType"></param>
+            <param name="instanceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetCoreBase.IOC.Container.GetInstanceName(System.Reflection.ICustomAttributeProvider)">
+            <summary>
+            获取单接口多实例 需要Resolve哪个实例的名字
+            </summary>
+            <param name="provider">为什么要用ICustomAttributeProvider,为了同时支持参数和属性，
+            ParameterInfo和PropertyInfo都继承自ICustomAttributeProvider</param>
+            <returns></returns>
+        </member>
+        <member name="P:NetCoreBase.IOC.ContainerRegistModel.SingletonInstance">
+            <summary>
+            仅限单例使用
+            </summary>
+        </member>
+        <member name="P:NetCoreBase.Models.TokenManagement.Issuer">
+            <summary>
+            token 是给谁的
             </summary>
         </member>
         <member name="P:NetCoreBase.Models.TokenManagement.AccessExpiration">
             <summary>
             过期时间
             </summary>
+        </member>
+        <member name="M:NetCoreBase.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            IConfiguration 是用来加载配置值的，可以加载内存键值对、JSON或XML配置文件，我们通常用来加载缺省的appsettings.json 
+            执行到Startup的时候，IConfiguration已经被注入到services了，不需要我们额外添加注入的代码，缺省就是读取appsettings.json文件
+            </summary>
+            <param name="configuration"></param>
         </member>
     </members>
 </doc>

@@ -38,3 +38,8 @@ C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\Iden
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\IdentityServer4.dll
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\IdentityServer4.Storage.dll
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\IdentityModel.AspNetCore.OAuth2Introspection.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\IdentityServer4.AccessTokenValidation.dll
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.csproj.CoreCompileInputs.cache
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.MvcApplicationPartsAssemblyInfo.cache
