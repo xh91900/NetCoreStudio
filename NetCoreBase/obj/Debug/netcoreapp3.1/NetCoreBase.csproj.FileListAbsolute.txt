@@ -7,7 +7,6 @@ C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetC
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.RazorTargetAssemblyInfo.cache
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\staticwebassets\NetCoreBase.StaticWebAssets.Manifest.cache
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\staticwebassets\NetCoreBase.StaticWebAssets.xml
-C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.csprojAssemblyReference.cache
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\NetCoreBase.deps.json
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\NetCoreBase.runtimeconfig.json
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\NetCoreBase.runtimeconfig.dev.json
