@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBase", "NetCoreBase\NetCoreBase.csproj", "{06638A66-90BA-4882-9C2C-2064A20EAAA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreWebBase", "NetCoreWebBase\NetCoreWebBase.csproj", "{BB958F9E-5890-495A-A459-22C01978EAA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06638A66-90BA-4882-9C2C-2064A20EAAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06638A66-90BA-4882-9C2C-2064A20EAAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06638A66-90BA-4882-9C2C-2064A20EAAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06638A66-90BA-4882-9C2C-2064A20EAAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB958F9E-5890-495A-A459-22C01978EAA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB958F9E-5890-495A-A459-22C01978EAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB958F9E-5890-495A-A459-22C01978EAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB958F9E-5890-495A-A459-22C01978EAA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A9DC75B-578C-402F-A22A-5A146A7A2805}
+	EndGlobalSection
+EndGlobal

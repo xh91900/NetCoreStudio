@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetCoreBase</name>
+    </assembly>
+    <members>
+        <member name="T:NetCoreBase.Attributes.CustomActionFilterAttribute">
+            <summary>
+            asp.net core 里面的过滤器有（按执行顺序排序）
+            IAuthorizationFilter
+            IResourceFilter
+            IExceptionFilter
+            IActionFilter
+            IResultFilter
+            </summary>
+        </member>
+        <member name="T:NetCoreBase.Controllers.WeatherForecastController">
+            <summary>
+            WeatherForecastController
+            </summary>
+        </member>
+        <member name="M:NetCoreBase.Controllers.WeatherForecastController.Get">
+            <summary>
+            获取天气
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NetCoreBase.Controllers.WeatherForecastController.Health">
+            <summary>
+            用于consul健康检查
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NetCoreBase.ExtensionFunctions.SwaggerExtension">
+            <summary>
+            用swagger action必须标记HTTP操作方法，get,post...
+            </summary>
+        </member>
+        <member name="P:NetCoreBase.Models.TokenManagement.AccessExpiration">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+    </members>
+</doc>
