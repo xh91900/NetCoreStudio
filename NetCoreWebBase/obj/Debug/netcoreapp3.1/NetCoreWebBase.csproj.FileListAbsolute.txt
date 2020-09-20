@@ -57,3 +57,4 @@ C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\R
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.csproj.CoreCompileInputs.cache
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreWebBase\obj\Debug\netcoreapp3.1\NetCoreWebBase.csprojAssemblyReference.cache

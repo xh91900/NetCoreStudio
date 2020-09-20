@@ -10,7 +10,27 @@ using Dapper.Contrib.Extensions;
 
 namespace NetCoreWebBase.DapperHelper
 {
-    public class DapperHelper
+    public interface IDapperHelper
+    {
+        public T QueryFirstOrDefault<T>(string sql, object param = null, IDbTransaction dbTransaction = null, int? commandTimeout = null, CommandType? commandType = null) where T : BaseEntity;
+
+        public IEnumerable<T> Query<T>(string sql, object param = null, IDbTransaction dbTransaction = null, bool buffered = true, int? commandTimeout = null, CommandType? commandType = null) where T : BaseEntity;
+
+        public int Execute(string sql, object param = null, IDbTransaction dbTransaction = null, int? commandTimeout = null);
+
+        public T Get<T>(int id) where T : BaseEntity;
+
+        public IEnumerable<T> GetAll<T>(int id) where T : BaseEntity;
+
+        public long Insert<T>(T t) where T : BaseEntity;
+
+        public bool Update<T>(T t) where T : BaseEntity;
+
+        public bool Delete<T>(T t) where T : BaseEntity;
+        
+    }
+
+    public class DapperHelper: IDapperHelper
     {
         //优化到ConnectionOptions
         //static IDbConnection dbConnection = new SqlConnection();
@@ -25,7 +45,7 @@ namespace NetCoreWebBase.DapperHelper
         //    }
         //}
 
-        public CustomConnectionFactory _customConnectionFactory = null;
+        public ICustomConnectionFactory _customConnectionFactory = null;
         public DapperHelper(ICustomConnectionFactory customConnectionFactory)
         {
             _customConnectionFactory = customConnectionFactory;
