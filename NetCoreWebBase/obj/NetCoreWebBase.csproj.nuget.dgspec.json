@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "RedisSessionProvider": {
+              "target": "Package",
+              "version": "[1.2.8, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.2, )"

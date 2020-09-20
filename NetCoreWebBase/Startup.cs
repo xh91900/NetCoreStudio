@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using NetCoreWebBase.DapperHelper;
 
 namespace NetCoreWebBase
 {
@@ -42,6 +43,9 @@ namespace NetCoreWebBase
                 p.Configuration = "127.0.0.1:6379";
                 p.InstanceName = "DistributedRedisCache";
             });
+
+            // 注入IOptions
+            services.Configure<DBConnectionOption>(Configuration.GetSection("DBConnectionString"));
 
             //服务器端缓存
             services.AddResponseCaching();

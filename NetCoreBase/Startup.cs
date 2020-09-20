@@ -6,6 +6,7 @@ using Consul;
 using IdentityServer4.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +34,8 @@ namespace NetCoreBase
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        //默认返回void 可选地返回 IServiceProvider以使用自定义的容器
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -55,22 +58,32 @@ namespace NetCoreBase
 
             services.AddIdentityServerClent();//ids客户端
 
-
-            //Configuration.ConsulRegist();方式一
-            services.AddSingleton<IConsulClient>(p =>
-            new ConsulClient(c => c.Address = new Uri("http://localhost:8900"))
-            );//方式二，consulClient.Agent.ServiceRegister在middleware中间件里面实现
+            services.AddTransient<IConsulClient, ConsulClient>();
+           
+            Configuration.ConsulRegist();//方式一
+           // services.AddSingleton<IConsulClient>(p =>
+           // new ConsulClient(c => c.Address = new Uri("http://localhost:8900"))
+           // );//方式二，consulClient.Agent.ServiceRegister在middleware中间件里面实现
 
             services.AddSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory,IConsulClient consulClient)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.Map("/maptest", p => { p.Run(async (context) => { await context.Response.WriteAsync("任何基于路径/maptest的请求都会在这里面处理"); }); });
+            // app.UseMiddleware<自定义的Middleware>();
+
+            // 开启网络应用目录浏览
+            app.UseDirectoryBrowser();
+
+            // 使得 web root（默认为 wwwroot）下的文件可以被访问
+            app.UseStaticFiles();
 
             app.UseIdentityServer();// ids4中间件
 

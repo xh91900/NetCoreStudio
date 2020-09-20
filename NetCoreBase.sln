@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreBase", "NetCoreBase\NetCoreBase.csproj", "{06638A66-90BA-4882-9C2C-2064A20EAAA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreWebBase", "NetCoreWebBase\NetCoreWebBase.csproj", "{BB958F9E-5890-495A-A459-22C01978EAA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreWebBase", "NetCoreWebBase\NetCoreWebBase.csproj", "{BB958F9E-5890-495A-A459-22C01978EAA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotGateWay", "OcelotGateWay\OcelotGateWay.csproj", "{5D5B5439-2D47-4D26-A4E2-6C56BA6DFB51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BB958F9E-5890-495A-A459-22C01978EAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB958F9E-5890-495A-A459-22C01978EAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB958F9E-5890-495A-A459-22C01978EAA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5B5439-2D47-4D26-A4E2-6C56BA6DFB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5B5439-2D47-4D26-A4E2-6C56BA6DFB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5B5439-2D47-4D26-A4E2-6C56BA6DFB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5B5439-2D47-4D26-A4E2-6C56BA6DFB51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

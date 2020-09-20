@@ -42,3 +42,4 @@ C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\bin\Debug\netcoreapp3.1\Iden
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.csproj.CoreCompileInputs.cache
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\xh919\source\repos\NetCoreBase\NetCoreBase\obj\Debug\netcoreapp3.1\NetCoreBase.csprojAssemblyReference.cache

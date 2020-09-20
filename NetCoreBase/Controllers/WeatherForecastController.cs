@@ -58,6 +58,7 @@ namespace NetCoreBase.Controllers
         /// <returns></returns>
         [ApiExplorerSettings(GroupName ="Project")]// swagger分组显示
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Health()
         {
             return Ok();

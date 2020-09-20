@@ -25,6 +25,12 @@ namespace NetCoreWebBase.DapperHelper
         //    }
         //}
 
+        public CustomConnectionFactory _customConnectionFactory = null;
+        public DapperHelper(ICustomConnectionFactory customConnectionFactory)
+        {
+            _customConnectionFactory = customConnectionFactory;
+        }
+
         /// <summary>
         /// 单个查询
         /// </summary>
@@ -60,7 +66,8 @@ namespace NetCoreWebBase.DapperHelper
         /// <returns></returns>
         public IEnumerable<T> Query<T>(string sql, object param = null, IDbTransaction dbTransaction = null, bool buffered = true, int? commandTimeout = null, CommandType? commandType = null) where T : BaseEntity
         {
-            return ConnectionOptions.DbConnection.Query<T>(sql, param, dbTransaction,buffered, commandTimeout, commandType);
+            return _customConnectionFactory.GetConnection(DBExcuteOption.Read).Query<T>(sql, param, dbTransaction, buffered, commandTimeout, commandType);
+            //return ConnectionOptions.DbConnection.Query<T>(sql, param, dbTransaction,buffered, commandTimeout, commandType);
         }
 
         public int Execute(string sql, object param = null, IDbTransaction dbTransaction = null, int? commandTimeout = null)

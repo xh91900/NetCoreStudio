@@ -30,6 +30,7 @@
           "Dapper.Contrib": "2.0.35",
           "Microsoft.Extensions.Caching.Memory": "3.1.8",
           "Microsoft.Extensions.Caching.Redis": "2.2.0",
+          "RedisSessionProvider": "1.2.8",
           "System.Data.SqlClient": "4.8.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -568,6 +569,32 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
+      "Newtonsoft.Json/6.0.1": {
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1.17001"
+          }
+        },
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RedisSessionProvider/1.2.8": {
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.1",
+          "StackExchange.Redis": "1.0.219"
+        },
+        "runtime": {
+          "lib/net45/RedisSessionProvider.dll": {
+            "assemblyVersion": "1.2.8.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/RedisSessionProvider.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -654,6 +681,17 @@
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
           }
+        }
+      },
+      "StackExchange.Redis/1.0.219": {
+        "runtime": {
+          "lib/StackExchange.Redis.dll": {
+            "assemblyVersion": "1.0.219.0",
+            "fileVersion": "1.0.219.0"
+          }
+        },
+        "compile": {
+          "lib/StackExchange.Redis.dll": {}
         }
       },
       "StackExchange.Redis.StrongName/1.2.6": {
@@ -3246,6 +3284,20 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
+    "Newtonsoft.Json/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tZ4TnfiXc3CUDZSZxXWcFOq5nDHxYY05qSDfZEJ654YOYzrPPOBgvSwJzr4jkTxeK5uoXmFG93Fq1lWDeLSmmA==",
+      "path": "newtonsoft.json/6.0.1",
+      "hashPath": "newtonsoft.json.6.0.1.nupkg.sha512"
+    },
+    "RedisSessionProvider/1.2.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CsbCvzjid09+FQnaWtlZjRKijiysyxJeqeRpUsVrZ8zKSxTL5Yb+zb1PcPtjwob/QfaiJdNybRZyCHRD+PjpIQ==",
+      "path": "redissessionprovider/1.2.8",
+      "hashPath": "redissessionprovider.1.2.8.nupkg.sha512"
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3392,6 +3444,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "StackExchange.Redis/1.0.219": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1evb+aH7/p0oPX173bzbWdIs0ED7aIGX1mqwR8TizZxNQyAsd5sGE8Dq/5wog9exkl4G5jba9LIDmAaz2cKNuQ==",
+      "path": "stackexchange.redis/1.0.219",
+      "hashPath": "stackexchange.redis.1.0.219.nupkg.sha512"
     },
     "StackExchange.Redis.StrongName/1.2.6": {
       "type": "package",
