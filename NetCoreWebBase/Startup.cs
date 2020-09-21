@@ -54,11 +54,16 @@ namespace NetCoreWebBase
             services.AddCors(p => p.AddPolicy("any", q => q.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
         }
 
+        /// <summary>
+        /// 使用autofac
+        /// program里面增加UseServiceProviderFactory(new AutofacServiceProviderFactory())
+        /// </summary>
+        /// <param name="containerBuilder"></param>
         public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterType<Service>().As<IService>()
                 .EnableInterfaceInterceptors()// 支持aop扩展
-                .InterceptedBy(typeof(CustomAutofacCacheInterceptor));//要扩展的特性
+                .InterceptedBy(typeof(CustomAutofacCacheInterceptor));//要扩展的特性,也可以用特性写在action上
 
             containerBuilder.RegisterType<CustomAutofacCacheInterceptor>();
         }

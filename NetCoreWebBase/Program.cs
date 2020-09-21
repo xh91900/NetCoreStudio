@@ -19,7 +19,7 @@ namespace NetCoreWebBase
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory())//把容器工厂换成aotofac的工厂
+            .UseServiceProviderFactory(new AutofacServiceProviderFactory())//把容器工厂换成aotofac的工厂(autofac有aop功能)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

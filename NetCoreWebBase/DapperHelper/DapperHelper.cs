@@ -10,7 +10,7 @@ using Dapper.Contrib.Extensions;
 
 namespace NetCoreWebBase.DapperHelper
 {
-    public interface IDapperHelper
+    public interface IDapperHelper : IDisposable
     {
         public T QueryFirstOrDefault<T>(string sql, object param = null, IDbTransaction dbTransaction = null, int? commandTimeout = null, CommandType? commandType = null) where T : BaseEntity;
 
@@ -46,9 +46,13 @@ namespace NetCoreWebBase.DapperHelper
         //}
 
         public ICustomConnectionFactory _customConnectionFactory = null;
+
+        public IDbConnection dbConnection = null;
+
         public DapperHelper(ICustomConnectionFactory customConnectionFactory)
         {
             _customConnectionFactory = customConnectionFactory;
+            dbConnection = _customConnectionFactory.GetConnection(DBExcuteOption.Read);
         }
 
         /// <summary>
@@ -124,6 +128,16 @@ namespace NetCoreWebBase.DapperHelper
         {
             //通过dapper的官方扩展Dapper.Contrib实现单表查询。
             return ConnectionOptions.DbConnection.Delete<T>(t);
+        }
+
+        /// <summary>
+        /// 这里可以释放链接
+        /// 实现了IDisposable接口线程销毁的时候触发
+        /// </summary>
+        public void Dispose()
+        {
+            if (dbConnection != null)
+                dbConnection.Dispose();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac.Extras.DynamicProxy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -11,6 +12,7 @@ namespace NetCoreWebBase
         public DateTime Find();
     }
 
+    [Intercept(typeof(CustomAutofacCacheInterceptor))]
     public class Service : IService
     {
         public DateTime Find()
