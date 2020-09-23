@@ -31,6 +31,8 @@ namespace NetCoreWebBase
         {
             services.AddRazorPages();
 
+            services.AddSession();
+
             //本地内存缓存
             services.AddMemoryCache(p =>
             {
@@ -57,10 +59,14 @@ namespace NetCoreWebBase
         /// <summary>
         /// 使用autofac
         /// program里面增加UseServiceProviderFactory(new AutofacServiceProviderFactory())
+        /// 和ConfigureServices不冲突，两边都可以注册
         /// </summary>
         /// <param name="containerBuilder"></param>
         public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
+            //通过Module注册，就不用一个一个的去注册了
+            //containerBuilder.RegisterModule<CustomAutofacModule>();
+
             containerBuilder.RegisterType<Service>().As<IService>()
                 .EnableInterfaceInterceptors()// 支持aop扩展
                 .InterceptedBy(typeof(CustomAutofacCacheInterceptor));//要扩展的特性,也可以用特性写在action上
@@ -96,6 +102,8 @@ namespace NetCoreWebBase
             FileProvider=new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),@"wwwroot")),
             //OnPrepareResponse=p=>
             });
+
+            app.UseSession();
 
             app.UseRouting();
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Consul;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NetCoreBase.Attributes;
@@ -83,7 +85,9 @@ namespace NetCoreBase
             app.UseDirectoryBrowser();
 
             // 使得 web root（默认为 wwwroot）下的文件可以被访问
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions() { 
+            //FileProvider=new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot"))
+            });
 
             app.UseIdentityServer();// ids4中间件
 

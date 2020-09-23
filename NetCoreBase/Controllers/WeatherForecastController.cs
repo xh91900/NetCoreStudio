@@ -29,7 +29,7 @@ namespace NetCoreBase.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             log = LogManager.GetLogger(typeof(WeatherForecastController));
-
+            _logger = logger; 
         }
 
         /// <summary>
