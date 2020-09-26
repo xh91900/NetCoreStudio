@@ -15,10 +15,15 @@ namespace NetCoreBase.Attributes
         {
             base.OnException(context);
 
-            LogManager.GetLogger(typeof(CustomExceptionFilterAttribute)).Error(context.Exception.ToString());
+            if (!context.ExceptionHandled)
+            {
+                LogManager.GetLogger(typeof(CustomExceptionFilterAttribute)).Error(context.Exception.ToString());
 
-            context.HttpContext.Response.ContentType = "text/html; charset=utf-8";
-            context.HttpContext.Response.WriteAsync("程序出错了");
+                context.HttpContext.Response.ContentType = "text/html; charset=utf-8";
+                context.HttpContext.Response.WriteAsync("程序出错了");
+
+                context.ExceptionHandled = true;
+            }
         }
     }
 
