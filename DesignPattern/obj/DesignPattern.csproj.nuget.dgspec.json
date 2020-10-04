@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\OcelotGateWay\\OcelotGateWay.csproj": {}
+    "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\DesignPattern\\DesignPattern.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\OcelotGateWay\\OcelotGateWay.csproj": {
+    "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\DesignPattern\\DesignPattern.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\OcelotGateWay\\OcelotGateWay.csproj",
-        "projectName": "OcelotGateWay",
-        "projectPath": "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\OcelotGateWay\\OcelotGateWay.csproj",
+        "projectUniqueName": "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\DesignPattern\\DesignPattern.csproj",
+        "projectName": "DesignPattern",
+        "projectPath": "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\DesignPattern\\DesignPattern.csproj",
         "packagesPath": "C:\\Users\\xh919\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\OcelotGateWay\\obj\\",
+        "outputPath": "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\DesignPattern\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,16 +41,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "Ocelot": {
-              "target": "Package",
-              "version": "[15.0.6, )"
-            },
-            "Ocelot.Provider.Consul": {
-              "target": "Package",
-              "version": "[15.0.6, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -62,9 +52,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
