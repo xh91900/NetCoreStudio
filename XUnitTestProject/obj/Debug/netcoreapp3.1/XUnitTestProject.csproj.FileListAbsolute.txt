@@ -130,3 +130,8 @@ C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\bin\Debug\netcoreapp3.1
 C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\bin\Debug\netcoreapp3.1\NetCoreWebBase.pdb
 C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\obj\Debug\netcoreapp3.1\XUnitTestProject.dll
 C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\obj\Debug\netcoreapp3.1\XUnitTestProject.pdb
+C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\bin\Debug\netcoreapp3.1\FluentAssertions.dll
+C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\xh919\source\repos\NetCoreBase\XUnitTestProject\obj\Debug\netcoreapp3.1\XUnitTestProject.csproj.CoreCompileInputs.cache
