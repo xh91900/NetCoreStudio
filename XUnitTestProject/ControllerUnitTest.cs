@@ -13,6 +13,7 @@ namespace XUnitTestProject
 {
     /// <summary>
     /// 用命令行执行测试 C:\Users\xh919\source\repos\NetCoreBase>dotnet test
+    /// https://www.cnblogs.com/cgzl/p/9294431.html
     /// </summary>
     public class ControllerUnitTest
     {
@@ -45,6 +46,9 @@ namespace XUnitTestProject
 
             /*
              Moq
+            针对隔离测试, 并不应该使用生产时用的依赖项, 所以我们使用模拟版本的依赖项
+            提高测试运行速度, 例如可以模拟DB, Web Service等比较慢的服务, 以及算法等
+            支持并行开发, 例如实际的依赖项还没有完成开发, 或者等待其他团队开发依赖项
              */
             var moq1 = new Moq.Mock<User>();
             var moq = new Moq.Mock<ICacheEntry>();//模拟对象
@@ -74,7 +78,8 @@ namespace XUnitTestProject
         [InlineData(2, 3, 6)]
         public void TestHomeController(int x, int y, int expected)
         {
-            var sut = new User();
+            Moq.Mock<MokInterface> mock = new Moq.Mock<MokInterface>();
+            var sut = new User(mock.Object);
             var res = sut.add(x, y);
             Assert.Equal(expected, actual: res);
         }
@@ -89,7 +94,11 @@ namespace XUnitTestProject
         [MemberData(nameof(TestData.TestDataList), MemberType = typeof(TestData))]
         public void TestHomeController1(int x, int y, int expected)
         {
-            var sut = new User();
+            Moq.Mock<MokInterface> mock = new Moq.Mock<MokInterface>();
+
+            //It代表需要被匹配的参数,It.IsAny<T>(), 它表示传递给方法的参数的类型只要是T就可以, 值是任意的. 只要满足了这个条件, 那么方法的返回值就是后边Returns()方法里设定的值.
+            mock.Setup(p => p.MokMethod(Moq.It.IsAny<string>())).Returns("hello");
+            var sut = new User(mock.Object);
             var res = sut.add(x, y);
             Assert.Equal(expected, actual: res);
         }
@@ -105,7 +114,8 @@ namespace XUnitTestProject
         [TestData]
         public void TestHomeController2(int x, int y, int expected)
         {
-            var sut = new User();
+            Moq.Mock<MokInterface> mock = new Moq.Mock<MokInterface>();
+            var sut = new User(mock.Object);
             var res = sut.add(x, y);
             Assert.Equal(expected, actual: res);
         }
@@ -120,6 +130,8 @@ namespace XUnitTestProject
         {
             //Assert.Raises<EventArgs>();
         }
+
+
     }
 
     public class UserContext : DbContext
@@ -143,12 +155,19 @@ namespace XUnitTestProject
 
     public class User
     {
+        public MokInterface _MokInterface;
+
+        public User(MokInterface mokInterface)
+        {
+            this._MokInterface = mokInterface;
+        }
         public string name { get; set; }
 
         public int age { get; set; }
 
         public int add(int x, int y)
         {
+            _MokInterface.MokMethod("");
             return x + y;
         }
     }
@@ -177,5 +196,10 @@ namespace XUnitTestProject
             yield return new object[] { 2, 2, 4 };
             yield return new object[] { 5, 2, 7 };
         }
+    }
+
+    public interface MokInterface
+    {
+        public string MokMethod(string par);
     }
 }
