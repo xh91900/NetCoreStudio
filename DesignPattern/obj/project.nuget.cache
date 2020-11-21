@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "yRd1BeyQTsybwQvFB0wwUotq+kcXLMUWbzdSq5mDYLNGMTc7XDSHDv4Ja3SAjjhcw+jD6TGinhHztWR2Tke1VA==",
+  "dgSpecHash": "5HtlQiboZ0KHI4B8Ai2K7ZcbffcMB6eM9MVI7n08Cet8A9sn73zqTXgxfG232G95ff3GJkG72lAsd1ucybZ01w==",
   "success": true,
   "projectFilePath": "C:\\Users\\xh919\\source\\repos\\NetCoreBase\\DesignPattern\\DesignPattern.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\xh919\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\xh919\\.nuget\\packages\\system.text.encodings.web\\4.7.0\\system.text.encodings.web.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
