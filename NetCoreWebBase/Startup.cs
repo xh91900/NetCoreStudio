@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
+using IdentityModel;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -54,6 +58,30 @@ namespace NetCoreWebBase
 
             //支持跨域，允许任何域名，允许任何方法，允许任何头部请求。
             services.AddCors(p => p.AddPolicy("any", q => q.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
+            //把jwt默认的claim映射关掉，如果不关闭就会修改从服务器返回的claim
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+            }).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)//使用cookie作为验证用户的方式
+            .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
+            {
+                options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.Authority = "http://localhost:5000";
+                options.RequireHttpsMetadata = false;
+                options.ClientId = "mvcclient";
+                options.ClientSecret = "mvcsecret";
+                options.SaveTokens = true;//把获取的token存到cookie里
+                options.ResponseType = "code";//token的响应类型，id_token，token（accesstoken）
+
+                options.Scope.Clear();
+                options.Scope.Add("api1");
+                options.Scope.Add(OidcConstants.StandardScopes.OpenId);
+                options.Scope.Add(OidcConstants.StandardScopes.Profile);
+                options.Scope.Add(OidcConstants.StandardScopes.OfflineAccess);//返回刷新token
+            });
         }
 
         /// <summary>
@@ -96,6 +124,7 @@ namespace NetCoreWebBase
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles(new StaticFileOptions() { 

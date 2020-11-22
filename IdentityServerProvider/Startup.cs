@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityServerProvider
@@ -38,11 +39,13 @@ namespace IdentityServerProvider
                 IdsOptions.Events.RaiseFailureEvents = true;
                 IdsOptions.Events.RaiseSuccessEvents = true;
             })
-                .AddTestUsers(Config.GetUsers());//哪些User可以被这个AuthrizationServer识别并授权
+               .AddTestUsers(Config.GetUsers());//哪些User可以被这个AuthrizationServer识别并授权
 
-            builder.AddInMemoryApiResources(Config.GetApiResources())
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryClients(Config.GetClients());
+            builder.AddInMemoryIdentityResources(Config.GetIdentityResources());
+            //builder.AddInMemoryApiResources(Config.GetApiResources());
+            builder.AddInMemoryApiScopes(Config.ApiScopes);
+            builder.AddInMemoryClients(Config.GetClients());
+
             if (Environment.IsDevelopment())
             {
                 //对于Token签名需要一对公钥和私钥
@@ -93,6 +96,7 @@ namespace IdentityServerProvider
 
             //添加IdentityServer中间件
             app.UseIdentityServer();
+
 
             app.UseRouting();
 

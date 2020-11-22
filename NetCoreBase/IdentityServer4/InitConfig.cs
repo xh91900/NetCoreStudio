@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace NetCoreBase.IdentityServer4
@@ -23,10 +22,10 @@ namespace NetCoreBase.IdentityServer4
                 ClientSecrets=new[]{ new Secret("111111".Sha256())},
                 AllowedGrantTypes=GrantTypes.ClientCredentials,//授权方式，客户端认证，只要ClientId和ClientSecrets
                 AllowedScopes=new []{"UserApi" },//允许访问的资源
-                Claims=new List<Claim>(){
-                new Claim(IdentityModel.JwtClaimTypes.Role,"Admin"),
-                new Claim(IdentityModel.JwtClaimTypes.NickName,"altman"),
-                new Claim("email","xh91900@126.com")
+                Claims={
+                new ClientClaim(IdentityModel.JwtClaimTypes.Role,"Admin"),
+                new ClientClaim(IdentityModel.JwtClaimTypes.NickName,"altman"),
+                new ClientClaim("email","xh91900@126.com")
                 }
                 }
             };

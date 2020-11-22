@@ -3,6 +3,7 @@ using System;
 using System.Net.Http;
 using IdentityModel.Client;
 using System.Threading.Tasks;
+using IdentityModel;
 
 namespace DesignPattern
 {
@@ -50,9 +51,9 @@ namespace DesignPattern
             var tokenResponse = client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest()
             {
                 Address = disco1.TokenEndpoint,//token端点从discovery endpoint里来
-                ClientId = "client",
-                ClientSecret = "111111",//客户端模式的凭证（只有这一个）
-                Scope = "api1"//Scope不能为空,多个用空格分开
+                ClientId = "console client",
+                ClientSecret = "511536EF-F270-4058-80CA-1C89C192F69A",//客户端模式的凭证（只有这一个）
+                Scope = "api1"//Scope不能为空,多个用空格分开openid
             }).Result;
             if (tokenResponse.IsError)
             {
@@ -63,7 +64,7 @@ namespace DesignPattern
             //3.请求资源
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
-            var response = client.GetAsync(disco1.UserInfoEndpoint).Result;//disco1.UserInfoEndpoint身份信息的地址
+            var response = client.GetAsync("http://localhost:5002/WeatherForecast").Result;//disco1.UserInfoEndpoint身份信息的地址
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
