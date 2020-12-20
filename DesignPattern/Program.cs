@@ -4,6 +4,7 @@ using System.Net.Http;
 using IdentityModel.Client;
 using System.Threading.Tasks;
 using IdentityModel;
+using System.Threading;
 
 namespace DesignPattern
 {
@@ -11,6 +12,17 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
+            System.Threading.ThreadPool.GetMinThreads(out int q, out int a);
+            var e = q;
+            var r = a;
+
+
+            while (true)
+            {
+                Task.Run(Producer);
+                Thread.Sleep(200);
+            }
+
             IdentityModel();
 
             // 装饰器
@@ -26,6 +38,23 @@ namespace DesignPattern
             student = new StudentDecoratorHomeWork(student);
             student.Study();
         }
+
+       async static void Producer()
+        {
+            var result = await Process();
+        }
+
+        static async Task<bool> Process()
+        {
+            await Task.Run(() =>
+            {
+                Thread.Sleep(1000);
+            });
+
+            Console.WriteLine("Ended - " + DateTime.Now.ToLongTimeString());
+            return true;
+        }
+
 
         /// <summary>
         /// 安装IdentityModel包
